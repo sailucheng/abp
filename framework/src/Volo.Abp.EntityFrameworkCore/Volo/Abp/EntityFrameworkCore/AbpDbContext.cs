@@ -274,8 +274,8 @@ namespace Volo.Abp.EntityFrameworkCore
                 return;
             }
 
-            entry.Reload();
             entry.State = EntityState.Modified;
+            entry.Reload();
             entry.Entity.As<ISoftDelete>().IsDeleted = true;
         }
 
